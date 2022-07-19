@@ -4,7 +4,7 @@ public class LinkedListDemo{
         Node next;
         Node(int data){
             this.data = data;
-            this.next = null;
+            this.next = null; 
         }
     }
     static Node head;
@@ -17,35 +17,33 @@ public class LinkedListDemo{
         Node node = new Node(num);
         node.next = null;
         if(head == null){
-            node.next = head;
-            head =node;
+            node = head;
         }
         else{
             Node temp = head;
-            while(temp.next != null){
+            while(temp !=null){
                 temp = temp.next;
             }
-            temp.next = node;
+            node.next = null;
+            temp = node;
         }
     }
     void addMid(int num){
         Node node = new Node(num);
-        node.next = null;
         if(head == null){
             node.next = head;
             head = node;
         }
         else{
             Node temp = head;
-
-            int len = 0;
+            int length = 0;
             while(temp != null){
-                len++;
-                temp = temp.next; 
+                temp = temp.next;
+                length++;
             }
-            int count = (len % 2 == 0)?len/2:(len+1)/2;
+            int count = (length % 2 == 0)?(length/2):(length+1)/2;
             temp = head;
-            while (count-- > 1){
+            while(count-- > 1){
                 temp = temp.next;
             }
             node.next = temp.next;
@@ -61,15 +59,15 @@ public class LinkedListDemo{
     }
     public static void main(String[] args) {
         LinkedListDemo ls = new LinkedListDemo();
-        ls.addFirst(2);
-        ls.addFirst(34);
-        ls.addLast(431);
-        ls.addLast(354);
-        ls.addFirst(2);
-        ls.addFirst(34);
-        ls.addLast(431);
-        ls.addLast(354);
-        ls.addMid(23);
+        ls.addFirst(23);
+        ls.addFirst(43);
+        ls.addLast(34);
+        ls.addFirst(324);
+        // ls.addMid(9);
+        ls.addFirst(23);
+        ls.addFirst(43);
+        ls.addLast(34);
+        ls.addFirst(324);
         ls.print();
     }
 }
