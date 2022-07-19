@@ -17,19 +17,19 @@ public class LinkedListDemo{
         Node node = new Node(num);
         node.next = null;
         if(head == null){
-            node = head;
+            head = node;
         }
         else{
             Node temp = head;
-            while(temp !=null){
+            while(temp.next !=null){
                 temp = temp.next;
             }
-            node.next = null;
-            temp = node;
+            temp.next = node;
         }
     }
     void addMid(int num){
         Node node = new Node(num);
+        node.next = null;
         if(head == null){
             node.next = head;
             head = node;
@@ -63,7 +63,7 @@ public class LinkedListDemo{
         ls.addFirst(43);
         ls.addLast(34);
         ls.addFirst(324);
-        // ls.addMid(9);
+        ls.addMid(9);
         ls.addFirst(23);
         ls.addFirst(43);
         ls.addLast(34);
