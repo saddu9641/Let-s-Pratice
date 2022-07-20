@@ -68,6 +68,27 @@ public class LinkedListDemo{
         }
         
     }
+    void deleteMid(){
+        Node temp = head;
+        if(head.next == null){
+            head = null;
+        }
+        else{
+            int l = 0;
+            while(temp != null){
+                temp = temp.next;
+                l++;
+            }
+            int count = l%2==0?l/2:(l+1)/2;
+            temp = head;
+            while(count-- > 2){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            
+
+        }
+    }
     void print(){
         Node temp = head;
         while(temp != null){
@@ -84,6 +105,7 @@ public class LinkedListDemo{
         ls.addMid(2);
         ls.deleteLast();
         ls.deleteFirst();
+        ls.deleteMid();
         ls.print();
     }
 }
