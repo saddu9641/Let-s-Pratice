@@ -89,6 +89,20 @@ public class LinkedListDemo{
 
         }
     }
+    void deleteAtGivenIndex(int key){
+        Node temp = head;
+        Node pointer= null;
+        if(temp != null && temp.data == key){
+            head = temp.next;
+        }
+        else{
+            while(temp.data != key && temp != null){
+                pointer = temp;
+                temp = temp.next;
+            }
+            pointer.next = temp.next;
+        }
+    }
     void print(){
         Node temp = head;
         while(temp != null){
@@ -103,9 +117,17 @@ public class LinkedListDemo{
         ls.addLast(1);
         ls.addFirst(5);
         ls.addMid(2);
+        ls.addFirst(3);
+        ls.addFirst(4);
+        ls.addLast(1);
+        ls.addFirst(5);
+        ls.addMid(2);
         ls.deleteLast();
         ls.deleteFirst();
         ls.deleteMid();
+        ls.deleteAtGivenIndex(4);
+        ls.deleteAtGivenIndex(2);
+        ls.deleteAtGivenIndex(2);
         ls.print();
     }
 }
