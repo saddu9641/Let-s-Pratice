@@ -50,6 +50,24 @@ public class LinkedListDemo{
             temp.next = node;
         }
     }
+    void deleteFirst(){
+        Node temp = head;
+        temp.next = head.next;
+        head = temp.next;
+    }
+    void deleteLast(){
+        Node temp = head ;
+        if(temp.next == null){
+            head = null;
+        }
+        else{
+            while(temp.next.next != null){
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+        
+    }
     void print(){
         Node temp = head;
         while(temp != null){
@@ -59,15 +77,13 @@ public class LinkedListDemo{
     }
     public static void main(String[] args) {
         LinkedListDemo ls = new LinkedListDemo();
-        ls.addFirst(23);
-        ls.addFirst(43);
-        ls.addLast(34);
-        ls.addFirst(324);
-        ls.addMid(9);
-        ls.addFirst(23);
-        ls.addFirst(43);
-        ls.addLast(34);
-        ls.addFirst(324);
+        ls.addFirst(3);
+        ls.addFirst(4);
+        ls.addLast(1);
+        ls.addFirst(5);
+        ls.addMid(2);
+        ls.deleteLast();
+        ls.deleteFirst();
         ls.print();
     }
 }
