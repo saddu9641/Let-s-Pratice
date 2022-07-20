@@ -1,4 +1,4 @@
-public class LinkedListDemo{
+public class SinglyLinkedListDemo{
     class Node{
         int data;
         Node next;
@@ -111,7 +111,7 @@ public class LinkedListDemo{
         }
     }
     public static void main(String[] args) {
-        LinkedListDemo ls = new LinkedListDemo();
+        SinglyLinkedListDemo ls = new SinglyLinkedListDemo();
         ls.addFirst(3);
         ls.addFirst(4);
         ls.addLast(1);
